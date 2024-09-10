@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, NavigationMenuLink } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { UserButton, useUser } from '@clerk/nextjs';
 
 const companiesMenuItems = [
   {
@@ -56,6 +57,7 @@ export function CompaniesMenu() {
 }
 
 export function StudentsMenu() {
+  const { user, isSignedIn } = useUser();
   return (
     <NavigationMenu className="hidden md:block lg:block">
       <NavigationMenuList>
@@ -68,6 +70,17 @@ export function StudentsMenu() {
                   {item.description}
                 </ListItem>
               ))}
+              { isSignedIn ?
+                (<ListItem key="Dashboard" title="Dashboard" href='/dashboard'>
+                  Go to your dashboard.
+                </ListItem>)
+                :
+                (
+                  <ListItem key="Sign-in/Sign-up" title="Sign-in / Sign-up" href='/sign-in'>
+                    To access the student portal.
+                  </ListItem>
+                )
+                }
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

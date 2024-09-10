@@ -4,8 +4,10 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navbar
 import {logo} from '@/public/logo.png'
 import Image from "next/image";
 import { CompaniesMenu, StudentsMenu } from "@/components/ui/NavigationMenu";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
 export default function NavbarComp() {
+  const { user, isSignedIn } = useUser();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
@@ -79,6 +81,12 @@ export default function NavbarComp() {
           
         ))}
       </NavbarMenu>
+      
+      {isSignedIn && (
+          <div className="flex items-center gap-5">
+            <UserButton />
+          </div>
+        )}
     </Navbar>
   );
 }
