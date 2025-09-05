@@ -2,134 +2,191 @@
 import React, { useRef } from "react";
 import * as motion from "framer-motion/client";
 import { useInView } from "framer-motion";
+import { 
+  GraduationCap, 
+  Target, 
+  Briefcase, 
+  Users, 
+  Network, 
+  Trophy,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react";
 
 const Features = () => {
   const featureData = [
     {
+      icon: GraduationCap,
       title: "Quality Education",
       description:
-        "The departments are equipped with high-end lab facilities. High Voltage Lab, Electrical Dept. has been awarded as Centre of Excellence by Indian Govt. and is one of its kind in India. Labs at Civil and Mechanical dept. are used by Govt. for various testing purposes. Computer Science dept. has over 350 computers with 100Mbps Internet facility.",
+        "State-of-the-art lab facilities with High Voltage Lab awarded as Centre of Excellence by Indian Govt. Over 350 computers with 100Mbps Internet facility across departments.",
+      color: "from-blue-600 to-blue-700",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600"
     },
     {
+      icon: Target,
       title: "Employability Tests",
       description:
-        "We conduct frequent employability and assessment tests at college to prepare students for campus placements. Since its inaugural we have seen a sharp spike in our placements.",
+        "Regular assessment tests and mock interviews to prepare students for campus placements. Proven track record of improved placement statistics.",
+      color: "from-cyan-500 to-cyan-600",
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600"
     },
     {
-      title: "Min 45 Days Ind. Training",
+      icon: Briefcase,
+      title: "Industry Training",
       description:
-        "During the even semester break students undergo Summer Internships and Vocational training at various Industries in India and abroad. By the end of III year every student has got a minimum 45 days of Industry exposure in his area of expertise.",
+        "Minimum 45 days of industry exposure through summer internships and vocational training at leading companies across India and abroad.",
+      color: "from-blue-600 to-blue-700",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600"
     },
     {
-      title: "Sessions by Ind. Experts",
+      icon: Users,
+      title: "Expert Sessions",
       description:
-        "Various companies visit our campus all round the year for interaction sessions with the students and guide them with the latest trends and technologies. Students have a beforehand knowledge about the industry needs.",
+        "Regular interaction sessions with industry experts and company representatives to keep students updated with latest trends and technologies.",
+      color: "from-cyan-500 to-cyan-600",
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600"
     },
     {
-      title: "Alumni Interaction Meets",
+      icon: Network,
+      title: "Alumni Network",
       description:
-        "Being one of the oldest colleges in Central India, we have a strong alumni base. Our alumni from all round the globe come and deliver Workshops & Seminars on various trending topics and also share their experiences with the students.",
+        "Strong alumni base from around the globe conducting workshops, seminars, and sharing experiences to guide current students.",
+      color: "from-blue-600 to-blue-700",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600"
     },
     {
-      title: "More than Academics",
+      icon: Trophy,
+      title: "Holistic Development",
       description:
-        "We have a wide spectrum of students excelling in different fields. Our students have presented papers at the International level, cleared Google Summer of Code, are interns at Top International Universities, and winners of National Level Sports and Cultural Championships. JEC provides a platform for overall development of students, providing them exposure to brighter career opportunities.",
+        "Students excel in international conferences, Google Summer of Code, top university internships, and national sports championships.",
+      color: "from-cyan-500 to-cyan-600",
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600"
     },
   ];
 
   return (
-    <div>
-      <section className="m-4 md:m-8 dark:bg-gray-100 dark:text-gray-800">
-        <div className="container p-4 mx-auto my-6 space-y-1 text-center">
-          <motion.h2
-            initial={{ opacity: 0, rotateX: -90 }}
-            whileInView={{ opacity: 1, rotateX: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="pb-3 text-3xl font-bold md:text-4xl"
-          >
-            WHY CHOOSE JEC
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            JEC was established as the Government Engineering College, Jabalpur
-            on 7 July 1947, making it the oldest engineering institute of
-            central India and among the oldest in India. The TPO team active
-            since the 1970s takes utmost care in providing students with
-            career-based training, making them industry-ready.
-          </motion.p>
-        </div>
-        <div className="container grid justify-center gap-4 mx-auto lg:grid-cols-2 xl:grid-cols-3">
+    <section className="py-20 bg-gray-50" id="features">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
+            <CheckCircle className="w-4 h-4 mr-2" />
+            Why Choose JEC
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Excellence in
+            <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Engineering Education
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Established in 1947, JEC is Central India's oldest engineering institute. 
+            Our TPO team has been providing career-focused training since the 1970s, 
+            making students industry-ready with comprehensive development programs.
+          </p>
+        </motion.div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featureData.map((feature, index) => (
             <FeatureCard
               key={index}
+              icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              color={feature.color}
+              bgColor={feature.bgColor}
+              iconColor={feature.iconColor}
               index={index}
             />
           ))}
         </div>
-      </section>
-    </div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Ready to Start Your Engineering Journey?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Join thousands of successful engineers who started their careers at JEC
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/sign-up"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+              >
+                Apply Now
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+              >
+                Learn More
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
 export default Features;
 
-const FeatureCard = ({ title, description, index }) => {
+const FeatureCard = ({ icon: Icon, title, description, color, bgColor, iconColor, index }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Trigger only once when in view
-
-  // Different animation variants for different types of animations
-  const animations = [
-    {
-      hidden: { opacity: 0, scale: 0.8 },
-      visible: { opacity: 1, scale: 1 },
-    },
-    {
-      hidden: { opacity: 0, x: -100 },
-      visible: { opacity: 1, x: 0 },
-    },
-    {
-      hidden: { opacity: 0, x: -100 },
-      visible: { opacity: 1, x: 0 },
-    },
-    {
-      hidden: { opacity: 0, scale: 0.8 },
-      visible: { opacity: 1, scale: 1 },
-    },
-    {
-      hidden: { opacity: 0, x: -100 },
-      visible: { opacity: 1, x: 0 },
-    },
-    {
-      hidden: { opacity: 0, x: -100 },
-      visible: { opacity: 1, x: 0 },
-    },
-  ];
-
-  // Cycle through different animations for each feature card
-  const animationVariant = animations[index % animations.length];
+  const isInView = useInView(ref, { once: true });
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"} // Animate only when in view
-      variants={animationVariant}
-      transition={{ duration: 0.5, delay: index * 0.2, ease: "easeInOut" }}
-      className="flex flex-col px-8 py-6 shadow-lg bg-white rounded-lg"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group"
     >
-      <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font dark:text-gray-800">
-        {title}
-      </h2>
-      <p className="flex-1 mb-4 text-base leading-relaxed dark:text-gray-600">
-        {description}
-      </p>
+      <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
+        {/* Icon */}
+        <div className={`inline-flex items-center justify-center w-16 h-16 ${bgColor} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+          <Icon className={`w-8 h-8 ${iconColor}`} />
+        </div>
+
+        {/* Content */}
+        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-gray-600 leading-relaxed">
+          {description}
+        </p>
+
+        {/* Gradient Line */}
+        <div className={`mt-6 h-1 bg-gradient-to-r ${color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      </div>
     </motion.div>
   );
 };
