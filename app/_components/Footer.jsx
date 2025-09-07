@@ -59,7 +59,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Jabalpur Engineering College's Training & Placement Office portal, 
+              Jabalpur Engineering College&apos;s Training & Placement Office portal, 
               connecting students with opportunities and companies with talent since 1947.
             </p>
             <div className="flex space-x-4">

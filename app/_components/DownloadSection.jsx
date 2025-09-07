@@ -76,7 +76,7 @@ const DownloadsSection = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Access important documents, forms, and get in touch with our TPO team. 
-            We're here to help you with your placement journey.
+            We are here to help you with your placement journey.
           </p>
         </motion.div>
 

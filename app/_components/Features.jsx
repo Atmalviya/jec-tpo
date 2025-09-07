@@ -93,7 +93,7 @@ const Features = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Established in 1947, JEC is Central India's oldest engineering institute. 
+            Established in 1947, JEC is Central India&apos;s oldest engineering institute. 
             Our TPO team has been providing career-focused training since the 1970s, 
             making students industry-ready with comprehensive development programs.
           </p>

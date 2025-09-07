@@ -41,7 +41,7 @@ const InformationSection = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Established on July 7, 1947, JEC is Central India's oldest engineering institution. 
+            Established on July 7, 1947, JEC is Central India&apos;s oldest engineering institution. 
             We offer comprehensive B.Tech programs across eight disciplines, nine postgraduate 
             engineering courses, and MCA program, maintaining our legacy of academic excellence.
           </p>
@@ -102,7 +102,7 @@ const InformationSection = () => {
                 Our Legacy & Vision
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                As one of India's oldest engineering institutions, JEC has been at the forefront 
+                As one of India&apos;s oldest engineering institutions, JEC has been at the forefront 
                 of technical education for over seven decades. Our vision is to continue producing 
                 world-class engineers who contribute to technological advancement and innovation.
               </p>

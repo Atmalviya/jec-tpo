@@ -57,7 +57,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl"
             >
-              Jabalpur Engineering College (JEC) is one of India's oldest and most prestigious engineering institutions, 
+              Jabalpur Engineering College (JEC) is one of India&apos;s oldest and most prestigious engineering institutions, 
               consistently providing world-class technical education and shaping the future of engineering excellence.
             </motion.p>
 
